@@ -7,6 +7,7 @@ df=pd.read_csv("https://github.com/araj2/customer-database/blob/master/Ecommerce
 
 df=df.iloc[:,3:]
 
-df=df[df['Length of Membership']>3]
-
-df.to_csv(os.path.join('data','customer.csv')) 
+df=df[df['Length of Membership']>1]
+df.drop(columns=['Avg. Session Length'],inplace=True)
+df.to_csv(os.path.join('data','customer.csv'))
+ 
